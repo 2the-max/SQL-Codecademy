@@ -1,0 +1,36 @@
+-- This is the first query:
+
+SELECT DISTINCT year from population_years;
+
+-- Add your additional queries below:
+
+-- 3. 2000 through 2010.
+
+SELECT * FROM population_years
+WHERE country = 'Gabon'
+ORDER BY population DESC
+LIMIT 1;
+
+-- 4. 1.54526 million.
+
+SELECT * FROM population_years
+WHERE year = 2005
+ORDER BY population ASC
+LIMIT 10;
+
+-- 5. Niue, Falkland Islands, Montserrat, Ssaint Pierre and Miquelon, Saint Helena, Nauru, Cook Islands, Turks and Caicos Islands, Virgin British Isles, and Gibraltar.
+
+SELECT DISTINCT * FROM population_years
+WHERE year = 2010 AND population > 100;
+
+-- 6. Mexico, United States, Brazil, Russia, Nigeria, Bangladesh, China, India, Indonesia, Japan, and Pakistan.
+
+SELECT DISTINCT country FROM population_years
+WHERE country LIKE '%Islands%';
+
+-- 7. Nine.
+
+SELECT * FROM population_years
+WHERE country = 'Indonesia' AND (year = 2000 OR year = 2010);
+
+-- 8. 242.96834 - 214.67661 = 28.29173 million
